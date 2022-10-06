@@ -1,10 +1,18 @@
-import './App.css';
+import React from "react";
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Web for Admin</h1>
-    </div>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomeScreen />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
 
