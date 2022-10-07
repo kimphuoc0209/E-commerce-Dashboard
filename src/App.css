@@ -31,6 +31,24 @@ a.disabled {
 .Header-green {
   background-color: #4fa607;
 }
+/* .screen-overlay {
+  width: 0%;
+  height: 100%;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background-color: rgba(34, 34, 34, 0.6);
+  transition: opacity 0.2s linear, visibility 0.1s, width 1s ease-in;
+}
+.screen-overlay.show {
+  transition: opacity 0.5s ease, width 0s;
+  opacity: 1;
+  width: 100%;
+  visibility: visible;
+} */
 
 /* =================  DEFINED VARIABLES =================== */
 .icon-xs,
@@ -146,6 +164,7 @@ body.offcanvas-active {
   margin-left: auto;
   margin-right: auto;
 }
+
 .navbar-aside {
   max-width: 260px;
   display: block;
@@ -175,46 +194,7 @@ body.offcanvas-active {
   width: auto;
   max-width: 200px;
 }
-.menu-aside {
-  list-style: none;
-  margin: 0.5rem;
-  padding: 0;
-}
-.menu-aside a {
-  display: block;
-  text-decoration: none;
-}
-.menu-aside .menu-item {
-  margin-bottom: 5px;
-}
-.menu-aside .menu-item .icon {
-  color: #adb5bd;
-  margin-right: 10px;
-  font-size: 18px;
-}
-.menu-aside .active .icon {
-  color: #4fa607;
-}
-.menu-aside .active {
-  background-color: #ebf0fd;
-}
-.menu-aside .menu-link {
-  padding: 10px;
-  color: #29335d;
-  font-weight: bold;
-  border-radius: 0.3rem;
-  position: relative;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.menu-aside .menu-link .text {
-  vertical-align: middle;
-}
-.menu-aside .menu-link:hover {
-  transition: 0.2s linear;
-  background-color: #e9ecef;
-}
+
 .main-header {
   padding-left: 3%;
   padding-right: 3%;
@@ -222,32 +202,48 @@ body.offcanvas-active {
   background-color: #fff;
   border-bottom: 1px solid rgba(108, 117, 125, 0.25);
 }
-.main-header .nav{
+.main-header .nav {
   align-items: center;
 }
-.main-header .nav-item > a{
-  border-radius: 00.25rem;
+.main-header .nav-item > a {
+  border-radius: 0.25rem;
   color: #adb5bd;
   display: block;
   text-decoration: none;
 }
-.main-header .nav-link:hover{
+.main-header .nav-link:hover {
   background-color: #e9ecef;
   color: #4fa607;
 }
-.main-header .col-search{
+.main-header .col-search {
   flex-grow: 0.5;
 }
-.main-header .col-nav{
+.main-header .col-nav {
   display: flex;
   align-items: center;
 }
-.nav-item img.rounded-circle{
+
+.nav-item img.rounded-circle {
   border: 2px solid #eee;
 }
 .nav-item img.rounded-circle:hover {
   border-color: #4fa607;
 }
+
+.content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.content-header .content-title {
+  margin-bottom: 0;
+}
+
+.inner {
+  padding: 1rem;
+}
+
 body.aside-mini .main-wrap {
   margin-left: 70px;
 }
@@ -299,6 +295,47 @@ body.aside-mini .menu-aside .menu-item:hover .submenu {
 body.aside-mini .menu-aside .menu-item.has-submenu .menu-link:after {
   display: none;
 }
+
+.menu-aside {
+  list-style: none;
+  margin: 0.5rem;
+  padding: 0;
+}
+.menu-aside a {
+  display: block;
+  text-decoration: none;
+}
+.menu-aside .menu-item {
+  margin-bottom: 5px;
+}
+.menu-aside .menu-item .icon {
+  color: #adb5bd;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.menu-aside .active .icon {
+  color: #4fa607;
+}
+.menu-aside .active {
+  background-color: #ebf0fd;
+}
+.menu-aside .menu-link {
+  padding: 10px;
+  color: #29335d;
+  font-weight: bold;
+  border-radius: 0.3rem;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu-aside .menu-link .text {
+  vertical-align: middle;
+}
+.menu-aside .menu-link:hover {
+  transition: 0.2s linear;
+  background-color: #e9ecef;
+}
 .menu-aside .submenu {
   margin-left: 44px;
   display: none;
@@ -326,4 +363,31 @@ body.aside-mini .menu-aside .menu-item.has-submenu .menu-link:after {
   border-right: 5px solid transparent;
   border-bottom: 0;
   border-left: 5px solid transparent;
+}
+.btn-icon {
+  text-align: center;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.btn-icon:hover {
+  background-color: rgba(108, 117, 125, 0.15);
+}
+.btn-icon:focus {
+  box-shadow: none;
+}
+a[class*="card"] {
+  color: initial;
+}
+a[class*="card"]:hover .title {
+  color: #4fa607;
+}
+.icontext {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+}
+.icontext .icon {
+  position: relative;
+  flex-shrink: 0;
+  margin-right: 10px;
 }

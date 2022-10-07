@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div>
       <aside className="navbar-aside" id="offcanvas_aside">
-        <div className="aside_top">
+        <div className="aside-top">
           <Link to="/" className="brand-wrap">
             <img
               src="/images/logo.png"
@@ -82,4 +82,5 @@ const Sidebar = () => {
     </div>
   );
 };
+
 export default Sidebar;

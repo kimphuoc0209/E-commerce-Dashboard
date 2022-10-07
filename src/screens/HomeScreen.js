@@ -1,5 +1,5 @@
 import React from "react";
-// import Main from "../components/Home/Main";
+import Main from "../components/Home/Main";
 import Sidebar from "../components/sidebar";
 import Header from "../components/Header";
 
@@ -9,7 +9,7 @@ const HomeScreen = () => {
       <Sidebar />
       <main className="main-wrap">
         <Header />
-        {/* <Main /> */}
+        <Main />
       </main>
     </>
   );
