@@ -5,7 +5,7 @@ const products = [
     image: "/images/1.png",
     description:
       "Cây thủy sinh Vảy ốc đỏ là dòng cây dễ trồng thường được anh em chơi thủy sinh sử dụng làm trang trí bể cá, bể thủy sinh. Do đặc thù không cần CO2 vẫn phát triển tốt nên Vảy ốc đỏ được rất nhiều anh em chơi thủy sinh yêu thích.",
-    price: 25.0,
+    price: 25000,
     countInStock: 3,
     rating: 4,
     numReviews: 4,

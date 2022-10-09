@@ -391,3 +391,49 @@ a[class*="card"]:hover .title {
   flex-shrink: 0;
   margin-right: 10px;
 }
+/* BASE STYLE FOR PRODUCT ITEM */
+[class*="card-product"] {
+  border: 1px solid rgba(108, 117, 125, 0.25);
+}
+[class*="card-product"] p {
+  margin-bottom: 0;
+}
+[class*="card-product"] .img-wrap {
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  background: white;
+}
+[class*="card-product"] .img-wrap img {
+  height: 100%;
+  max-width: 100%;
+  width: auto;
+  display: inline-block;
+  object-fit: cover;
+}
+/* GRID STYLE PRODUCT ITEM */
+.card-product-grid {
+  margin-bottom: 20px;
+}
+.card-product-grid .img-wrap {
+  border-radius: 0.2rem 0.2rem 0 0;
+  height: 220px;
+}
+.card-product-grid .info-wrap {
+  padding: 1rem;
+}
+.card-product-grid a.title {
+  color: #6c757d;
+  display: block;
+  text-decoration: none;
+}
+.card-product-grid a.title:hover {
+  color: #4fa607;
+}
+.card-product-grid:hover {
+  border-color: #adb5bd;
+}
+.price {
+  font-weight: 600;
+}
