@@ -391,6 +391,10 @@ a[class*="card"]:hover .title {
   flex-shrink: 0;
   margin-right: 10px;
 }
+.icontext small,
+.icontext .title {
+  display: block;
+}
 /* BASE STYLE FOR PRODUCT ITEM */
 [class*="card-product"] {
   border: 1px solid rgba(108, 117, 125, 0.25);
@@ -436,4 +440,89 @@ a[class*="card"]:hover .title {
 }
 .price {
   font-weight: 600;
+}
+/*ITEMSIDE*/
+.itemside {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.itemside .aside, 
+.itemside .left {
+  position: relative;
+  flex-shrink: 0;
+}
+.itemside .info {
+  padding-left: 15px;
+  padding-right: 7px;
+}
+.itemside p {
+  margin-bottom: 0;
+}
+.itemside .title {
+  display: block;
+  margin-bottom: 5px;
+}
+.itemside a.title:hover {
+  color: #4fa607;
+}
+
+a.itemside {
+  color: initial;
+  text-decoration: none;
+}
+a.itemside:hover .title {
+  text-decoration: underline;
+}
+/* --------- description list --------*/
+[class*="dlist"] {
+  margin-bottom: 5px;
+}
+
+.dlist-inline dt,
+.dlist-inline dd {
+  display: inline-block;
+}
+
+.dlist {
+  display: flex;
+}
+.dlist dt {
+  width: 150px;
+  font-weight: normal;
+}
+.dlist dd {
+  margin-left: 30px;
+  vertical-align: baseline;
+  flex-grow: 1;
+  margin-bottom: 0;
+  text-align: right;
+}
+/* ====================== box ==================== */
+.box {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 1px solid rgba(108, 117, 125, 0.2);
+  background: #fff;
+}
+.box img {
+  max-width: 100%;
+}
+.card-user {
+  margin-bottom: 20px;
+}
+.card-user .card-header {
+  position: relative;
+  height: 100px;
+  background-color: #c3f19d !important;
+  text-align: center;
+}
+.card-user .img-avatar {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 100%;
+}
+.card-user .card-body {
+  text-align: center;
 }
