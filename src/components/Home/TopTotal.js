@@ -31,7 +31,7 @@ const TopTotal = () => {
       <div className="col-lg-4">
         <div className="card card-body mb-4 shadow-sm">
           <article className="icontext">
-            <span className="icon icon-sm rounded-circle alert-success">
+            <span className="icon icon-sm rounded-circle alert-warning">
               <i className="text-warning fas fa-shopping-basket"></i>
             </span>
             <div className="text">
