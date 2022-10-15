@@ -1,17 +1,17 @@
 import React from "react";
-import Main from "../components/Home/Main";
 import Sidebar from "../components/sidebar";
 import Header from "../components/Header";
+import MainProducts from "../components/Products/MainProducts";
 
-const HomeScreen = () => {
+const ProductScreen = () => {
   return (
     <>
       <Sidebar />
       <main className="main-wrap">
         <Header />
-        <Main />
+        <MainProducts />
       </main>
     </>
   );
 };
-export default HomeScreen;
+export default ProductScreen;
