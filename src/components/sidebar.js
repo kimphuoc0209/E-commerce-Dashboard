@@ -9,7 +9,7 @@ const Sidebar = () => {
           <Link to="/" className="brand-wrap">
             <img
               src="/images/logo.png"
-              style={{ height: "100px" }}
+              // style={{ height: "100px" }}
               className="logo"
               alt="Admin Dashboard"
             />
@@ -25,10 +25,10 @@ const Sidebar = () => {
           <ul className="menu-aside">
             <li className="menu-item">
               <NavLink
-                activeClassName="active"
+                // activeClassName="active"
                 className="menu-link"
                 to="/"
-                exact={true}
+                exact="true"
               >
                 <i className="icon fas fa-home"></i>
                 <span className="text">Dashboard</span>
@@ -36,7 +36,7 @@ const Sidebar = () => {
             </li>
             <li className="menu-item">
               <NavLink
-                activeClassName="active"
+                // activeClassName="active"
                 className="menu-link"
                 to="/products"
               >
@@ -46,7 +46,7 @@ const Sidebar = () => {
             </li>
             <li className="menu-item">
               <NavLink
-                activeClassName="active"
+                // activeClassName="active"
                 className="menu-link"
                 to="/addproduct"
               >
@@ -56,7 +56,7 @@ const Sidebar = () => {
             </li>
             <li className="menu-item">
               <NavLink
-                activeClassName="active"
+                // activeClassName="active"
                 className="menu-link"
                 to="/orders"
               >
@@ -66,7 +66,7 @@ const Sidebar = () => {
             </li>
             <li className="menu-item">
               <NavLink
-                activeClassName="active"
+                // activeClassName="active"
                 className="menu-link"
                 to="/users"
               >
