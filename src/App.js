@@ -11,21 +11,78 @@ import OrderScreen from "./screens/OrderScreen";
 import OrderDetailScreen from "./screens/OrderDetailSceen";
 import UsersScreen from "./screens/UsersScreen";
 import NotFound from "./screens/NotFound";
+import PrivateRouter from "./PrivateRouter";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
-          <Route path="/" element={<HomeScreen />} />
+          <Route
+            path="/"
+            element={
+              <PrivateRouter>
+                <HomeScreen />
+              </PrivateRouter>
+            }
+          />
           <Route path="/login" element={<Login />} />
-          <Route path="/products" element={<ProductScreen />} />
-          <Route path="/addproduct" element={<AddProduct />} />
-          <Route path="/product/:id/edit" element={<ProductEditScreen />} />
-          <Route path="/orders" element={<OrderScreen />} />
-          <Route path="/order" element={<OrderDetailScreen />} />
-          <Route path="/users" element={<UsersScreen />} />
-          <Route path="*" element={<NotFound />} />
+          <Route
+            path="/products"
+            element={
+              <PrivateRouter>
+                <ProductScreen />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="/addproduct"
+            element={
+              <PrivateRouter>
+                <AddProduct />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="/product/:id/edit"
+            element={
+              <PrivateRouter>
+                <ProductEditScreen />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="/orders"
+            element={
+              <PrivateRouter>
+                <OrderScreen />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="/order"
+            element={
+              <PrivateRouter>
+                <OrderDetailScreen />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="/users"
+            element={
+              <PrivateRouter>
+                <UsersScreen />
+              </PrivateRouter>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <PrivateRouter>
+                <NotFound />
+              </PrivateRouter>
+            }
+          />
         </Routes>
       </Router>
     </>
