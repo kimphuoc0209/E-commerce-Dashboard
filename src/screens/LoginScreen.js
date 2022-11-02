@@ -4,6 +4,7 @@ import Message from "../components/LoadingError/Error";
 import Loading from "../components/LoadingError/Loading";
 import { login } from "../Redux/Actions/UserActions";
 import { useNavigate } from "react-router-dom";
+import Toast from "../components/LoadingError/Toast";
 
 const Login = () => {
   window.scrollTo(0, 0);
@@ -27,6 +28,7 @@ const Login = () => {
   };
   return (
     <>
+      <Toast />
       <div
         className="card shadow mx-auto"
         style={{ maxWidth: "380px", marginTop: "100px" }}
