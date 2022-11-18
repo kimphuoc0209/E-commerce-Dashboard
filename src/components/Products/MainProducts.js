@@ -31,7 +31,7 @@ const MainProducts = () => {
               <Product product={product} key={product._id} />
             ))}
           </div>
-          <nav className="float-end mt-4" aria-label="Page navigation">
+          <nav className="float-end" aria-label="Page navigation">
             <ul className="pagination">
               <li className="page-item disabled">
                 <Link to="#" className="page-link">Previous</Link>

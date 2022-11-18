@@ -4,6 +4,12 @@
 INCLUDE STYLES AND COMPONENTS
 ===================== */
 /* ================== HELPERS =================== */
+/* new CSS */
+.logo{
+  font-size: 20px;
+  font-weight: bold;
+  color: #ebf0fd;
+}
 .table thead th {
   color: #adb5bd;
   font-weight: 400;
@@ -24,10 +30,10 @@ tbody tr:hover {
 a.disabled {
   pointer-events: none;
 }
-.btn-primary {
+/* .btn-primary {
   background-color: #4fa607 !important;
   border: 1px solid #4fa607 !important;
-}
+} */
 .Header-green {
   background-color: #4fa607;
 }
@@ -147,7 +153,7 @@ a.disabled {
 /* ================== BASE =================== */
 body {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
 }
 
 body.offcanvas-active {
@@ -155,7 +161,7 @@ body.offcanvas-active {
 }
 
 .main-wrap {
-  margin-left: 260px;
+  /* margin-left: 260px; */
   background-color: #f8f9fa;
 }
 
@@ -165,7 +171,7 @@ body.offcanvas-active {
   margin-right: auto;
 }
 
-.navbar-aside {
+/* .navbar-aside {
   max-width: 260px;
   display: block;
   position: fixed;
@@ -193,7 +199,7 @@ body.offcanvas-active {
   height: 46px;
   width: auto;
   max-width: 200px;
-}
+} */
 
 .main-header {
   padding-left: 3%;
