@@ -1,12 +1,12 @@
 import React from "react";
-import Sidebar from "./../components/sidebar";
+// import Sidebar from "./../components/sidebar";
 import Header from "./../components/Header";
 import OrderMain from "../components/Orders/OrderMain";
 
 const OrderScreen = () => {
   return (
     <>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <main className="main-wrap">
         <Header />
         <OrderMain />

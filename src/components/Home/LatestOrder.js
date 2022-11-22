@@ -5,7 +5,7 @@ const LatestOrder = () => {
   return (
     <div className="card-body">
       <h5 className="card-title">Latest Orders</h5>
-      <table className="table">
+      <table className="table table-striped">
         <tbody>
           <tr>
             <td>

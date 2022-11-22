@@ -1,8 +1,8 @@
 import React from "react";
-import TopTotal from "./TopTotal";
 import SaleStatistics from "./SalesStatistics";
 import ProductsStatistics from "./ProductsStatistics";
 import LatestOrder from "./LatestOrder";
+import TopTotal from "./TopTotal"
 
 const Main = () => {
   return (
