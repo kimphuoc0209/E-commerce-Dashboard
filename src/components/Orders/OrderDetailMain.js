@@ -7,7 +7,7 @@ const OrderDetailMain = () => {
   return (
     <section className="content-main">
       <div className="content-header">
-        <Link to="/orders" className="btn btn-dark text-white">
+        <Link to="/orders" className="btn btn-danger text-white">
           Back To Orders
         </Link>
       </div>

@@ -26,7 +26,7 @@ const UserComponent = () => {
       </div>
       <div className="card mb-4">
         <header className="card-header">
-          <div className="row gx-3">
+          <div className="row gx-3 py-3">
             <div className="col-lg-4 col-md-6 me-auto">
               <input
                 type="text"
@@ -43,34 +43,66 @@ const UserComponent = () => {
           ) : error ? (
             <Message variant="alert-danger">{error}</Message>
           ) : (
-            <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-              {users.map((user) => (
-                <div className="col" key={user._id}>
-                  <div className="card card-user shadow-sm">
-                    <div className="card-header">
-                      <img
-                        className="img-md img-avatar"
-                        src="images/logo.png"
-                        alt="User pic"
-                      />
-                    </div>
-                    <div className="card-body">
-                      <h5 className="card-title mt-5">{user.name}</h5>
-                      <div className="card-text text-muted">
-                        {user.isAdmin === true ? (
-                          <p className="m-0">Admin</p>
-                        ) : (
-                          <p className="m-0">Customer</p>
-                        )}
-
-                        <p>
-                          <a href={`mailto:${user.email}`}>{user.email}</a>
-                        </p>
-                      </div>
-                    </div>
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="main-box clearfix">
+                  <div className="table-responsive">
+                    <table className="table user-list">
+                      <thead>
+                        <tr>
+                          <th>
+                            <span>User</span>
+                          </th>
+                          <th>
+                            <span>User ID</span>
+                          </th>
+                          <th className="text-center">
+                            <span>Created</span>
+                          </th>
+                          <th>
+                            <span>Email</span>
+                          </th>
+                          <th>
+                            <span>Acion</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {users.map((user) => (
+                          <tr>
+                            <td>
+                              <img src="images/logo.png" alt="avt" />
+                              <h5 className="user-link">{user.name}</h5>
+                              {user.isAdmin === true ? (
+                                <span className="user-subhead">Admin</span>
+                              ) : (
+                                <span className="user-subhead">Customer</span>
+                              )}
+                            </td>
+                            <td >{user._id}</td>
+                            <td className="text-center">
+                              <span className="label label-default">
+                                22/11/2022
+                              </span>
+                            </td>
+                            <td>
+                              <a href={`mailto:${user.email}`}>{user.email}</a>
+                            </td>
+                            <td style={{ width: "20%" }}>
+                              <Link to="#" className="table-link danger">
+                                <span className="fa-stack">
+                                  <i className="fa fa-square fa-stack-2x"></i>
+                                  <i className="fas fa-trash-alt fa-stack-1x fa-inverse"></i>
+                                </span>
+                              </Link>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           )}
 

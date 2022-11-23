@@ -1,12 +1,14 @@
 import React from "react";
 import Main from "../components/Home/Main";
-import Sidebar from "../components/sidebar";
+// import Sidebar from "../components/sidebar";
 import Header from "../components/Header";
+import Toast from "../components/LoadingError/Toast";
 
 const HomeScreen = () => {
   return (
     <>
-      <Sidebar />
+      <Toast />
+      {/* <Sidebar /> */}
       <main className="main-wrap">
         <Header />
         <Main />
