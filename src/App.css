@@ -386,8 +386,8 @@ a.itemside:hover .title {
 .card-product-grid .info-wrap {
   padding: 1rem;
 }
-.card-product-grid a.title {
-  color: #c93d2b;
+.card-product-grid .info-wrap a.title {
+  color: #4fa607;
   display: block;
   text-decoration: none;
 }
@@ -395,7 +395,7 @@ a.itemside:hover .title {
   color: #4fa607;
 }
 .card-product-grid:hover {
-  border-color: #adb5bd;
+  border-color: #9dc2e8;
 }
 
 /* LARGE LIST STYLE PRODUCT ITEM */

@@ -2,12 +2,11 @@ import React from "react";
 // import Sidebar from "../components/sidebar";
 import Header from "../components/Header";
 import EditProductMain from "../components/Products/EditProductMain";
-import products from "../data/Products";
 import { useParams } from "react-router-dom";
 
 const ProductEditScreen = () => {
   const { id } = useParams();
-  const productId = products.find((p) => String(p._id) === id);
+  const productId = id;
   return (
     <>
       {/* <Sidebar /> */}
