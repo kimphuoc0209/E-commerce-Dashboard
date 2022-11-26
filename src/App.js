@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -12,8 +12,22 @@ import OrderDetailScreen from "./screens/OrderDetailSceen";
 import UsersScreen from "./screens/UsersScreen";
 import NotFound from "./screens/NotFound";
 import PrivateRouter from "./PrivateRouter";
+import { useDispatch, useSelector } from "react-redux";
+import { listProducts } from "./Redux/Actions/ProductActions";
+import { listOrders } from "./Redux/Actions/OrderActions";
 
 function App() {
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+
+  useEffect(() => {
+    if (userInfo && userInfo.isAdmin) {
+      dispatch(listProducts());
+      dispatch(listOrders());
+    }
+  }, [dispatch, userInfo]);
+
   return (
     <>
       <Router>
@@ -60,7 +74,7 @@ function App() {
             }
           />
           <Route
-            path="/order"
+            path="/order/:id"
             element={
               <PrivateRouter>
                 <OrderDetailScreen />
