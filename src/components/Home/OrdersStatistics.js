@@ -2,12 +2,12 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
 
-const SaleStatistics = () => {
+const OrdersStatistics = () => {
   return (
     <div className="col-xl-4 col-lg-12">
       <div className="card mb-4 shadow-sm">
         <article className="card-body">
-          <h5 className="card-title">Sale Statistics</h5>
+          <h5 className="card-title">Orders Statistics</h5>
           <iframe
             style={{
               background: "#FFFFFF",
@@ -17,11 +17,11 @@ const SaleStatistics = () => {
               width: "100%",
               height: "350px",
             }}
-            src="https://charts.mongodb.com/charts-project-0-mjvhu/embed/charts?id=638459e7-91cd-4fe1-81e5-63c4ba5ce090&maxDataAge=3600&theme=light&autoRefresh=true"
+            src="https://charts.mongodb.com/charts-project-0-mjvhu/embed/charts?id=638460c8-886c-441a-8e26-47b77e5507bb&maxDataAge=3600&theme=light&autoRefresh=true"
           ></iframe>
         </article>
       </div>
     </div>
   );
 };
-export default SaleStatistics;
+export default OrdersStatistics;

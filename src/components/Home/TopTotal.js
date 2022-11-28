@@ -1,6 +1,15 @@
 import React from "react";
 
-const TopTotal = () => {
+const TopTotal = (props) => {
+  const { orders, products, users } = props;
+
+  let totalSale = 0;
+  if (orders) {
+    orders.map((order) =>
+      order.isPaid === true ? (totalSale = totalSale + order.totalPrice) : null
+    );
+  }
+
   return (
     <div className="row">
       <div className="col-md-4 col-xl-3">
@@ -9,7 +18,7 @@ const TopTotal = () => {
             <h6 className="m-b-20">Total Income </h6>
             <h2 className="text-right">
               <i className="fas fa-wallet"></i>
-              <span className="float-end">486 VND</span>
+              <span className="float-end">${totalSale.toFixed(2)}</span>
             </h2>
           </div>
         </div>
@@ -20,7 +29,11 @@ const TopTotal = () => {
             <h6 className="m-b-20">Total Orders </h6>
             <h2 className="text-right">
               <i className="fas fa-bags-shopping"></i>
-              <span className="float-end">486</span>
+              {orders ? (
+                <span className="float-end">{orders.length}</span>
+              ) : (
+                <span className="float-end">0</span>
+              )}
             </h2>
           </div>
         </div>
@@ -31,7 +44,11 @@ const TopTotal = () => {
             <h6 className="m-b-20">Total Products </h6>
             <h2 className="text-right">
               <i className="fas fa-shopping-basket"></i>
-              <span className="float-end">486</span>
+              {products ? (
+                <span className="float-end">{products.length}</span>
+              ) : (
+                <span className="float-end">0</span>
+              )}
             </h2>
           </div>
         </div>
@@ -42,7 +59,11 @@ const TopTotal = () => {
             <h6 className="m-b-20">Total Customers </h6>
             <h2 className="text-right">
               <i className="fas fa-user"></i>
-              <span className="float-end">486</span>
+              {users ? (
+                <span className="float-end">{users.length}</span>
+              ) : (
+                <span className="float-end">0</span>
+              )}
             </h2>
           </div>
         </div>
