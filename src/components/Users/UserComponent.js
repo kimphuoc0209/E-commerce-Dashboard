@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { listUser } from "../../Redux/Actions/UserActions";
 import Loading from "../LoadingError/Loading";
 import Message from "../LoadingError/Error";
+import moment from "moment";
 
 const UserComponent = () => {
   const dispatch = useDispatch();
@@ -82,7 +83,7 @@ const UserComponent = () => {
                             <td >{user._id}</td>
                             <td className="text-center">
                               <span className="label label-default">
-                                22/11/2022
+                              {moment(user.createdAt).format("MMMM Do YYYY")}
                               </span>
                             </td>
                             <td>
