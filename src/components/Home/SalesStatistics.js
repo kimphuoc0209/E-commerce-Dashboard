@@ -17,7 +17,7 @@ const SaleStatistics = () => {
               width: "100%",
               height: "350px",
             }}
-            src="https://charts.mongodb.com/charts-project-0-mjvhu/embed/charts?id=638459e7-91cd-4fe1-81e5-63c4ba5ce090&maxDataAge=3600&theme=light&autoRefresh=true"
+            src="https://charts.mongodb.com/charts-project-0-mjvhu/embed/charts?id=638459e7-91cd-4fe1-81e5-63c4ba5ce090&maxDataAge=60&theme=light&autoRefresh=true"
           ></iframe>
         </article>
       </div>

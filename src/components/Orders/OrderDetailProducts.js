@@ -41,9 +41,9 @@ const OrderDetailProducts = (props) => {
                 <div className="info">{item.name}</div>
               </Link>
             </td>
-            <td>{item.price}VND</td>
+            <td>${item.price}</td>
             <td>{item.qty}</td>
-            <td className="text-end">{item.price * item.qty} VND</td>
+            <td className="text-end">${item.price * item.qty}</td>
           </tr>
         ))}
 
@@ -51,15 +51,15 @@ const OrderDetailProducts = (props) => {
           <td colSpan="4">
             <article className="float-end">
               <dl className="dlist">
-                <dt>Subtotal:</dt> <dd>{order.itemsPrice} VND</dd>
+                <dt>Subtotal:</dt> <dd>${order.itemsPrice}</dd>
               </dl>
               <dl className="dlist">
-                <dt>Shipping Cost:</dt> <dd>{order.shippingPrice} VND</dd>
+                <dt>Shipping Cost:</dt> <dd>${order.shippingPrice}</dd>
               </dl>
               <dl className="dlist">
                 <dt>Grand Total:</dt>
                 <dd>
-                  <b className="h5">{order.totalPrice} VND</b>
+                  <b className="h5">${order.totalPrice}</b>
                 </dd>
               </dl>
               <dl className="dlist">

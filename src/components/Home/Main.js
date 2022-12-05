@@ -1,12 +1,14 @@
-import React from "react";
+import React, {useEffect} from "react";
 import TopTotal from "./TopTotal";
 import SaleStatistics from "./SalesStatistics";
 import OrdersStatistics from "./OrdersStatistics";
 import CustomersStatistics from "./CustomersStatistics";
 import LatestOrder from "./LatestOrder";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { listUser } from "../../Redux/Actions/UserActions";
 
 const Main = () => {
+  const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
   const { products } = productList;
 
@@ -15,7 +17,10 @@ const Main = () => {
 
   const userList = useSelector((state) => state.userList);
   const { users } = userList;
-  console.log({ users });
+  
+  useEffect(() => {
+    dispatch(listUser());
+  }, [dispatch]);
   return (
     <>
       <section className="content-main">
