@@ -1,8 +1,8 @@
 import axios from "axios";
 import {
-  ORDER_DELIVERED_FAIL,
-  ORDER_DELIVERED_REQUEST,
-  ORDER_DELIVERED_SUCCESS,
+  ORDER_CONFIRMED_FAIL,
+  ORDER_CONFIRMED_REQUEST,
+  ORDER_CONFIRMED_SUCCESS,
   ORDER_DETAILS_FAIL,
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
@@ -71,10 +71,10 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
   }
 };
 
-// ORDER DELIVERED
-export const deliverOrder = (order) => async (dispatch, getState) => {
+// ORDER CONFIRMED
+export const confirmOrder = (order) => async (dispatch, getState) => {
   try {
-    dispatch({ type: ORDER_DELIVERED_REQUEST });
+    dispatch({ type: ORDER_CONFIRMED_REQUEST });
     const {
       userLogin: { userInfo },
     } = getState();
@@ -84,8 +84,12 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.put(`/api/orders/${order._id}/delivered`,{}, config);
-    dispatch({ type: ORDER_DELIVERED_SUCCESS, payload: data });
+    const { data } = await axios.put(
+      `/api/orders/${order._id}/verified`,
+      {},
+      config
+    );
+    dispatch({ type: ORDER_CONFIRMED_SUCCESS, payload: data });
   } catch (error) {
     const message =
       error.response && error.response.data.message
@@ -95,7 +99,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
       dispatch(logout());
     }
     dispatch({
-      type: ORDER_DELIVERED_FAIL,
+      type: ORDER_CONFIRMED_FAIL,
       payload: message,
     });
   }

@@ -48,6 +48,7 @@ const Login = () => {
                   <input
                     className="form-control py-3"
                     placeholder="Email"
+                    required
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -60,6 +61,7 @@ const Login = () => {
                   <input
                     className="form-control py-3"
                     placeholder="Password"
+                    required
                     type="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}

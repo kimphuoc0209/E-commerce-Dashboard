@@ -42,7 +42,7 @@ const OrderDetailInfo = (props) => {
             <h6 className="mb-1">Deliver To</h6>
             <p className="mb-1">
               Address: {order.shippingAddress.city} <br />{" "}
-              {order.shippingAddress.address} <br /> Postal Code:{" "}
+              {order.shippingAddress.address} <br /> Phone Number:{" "}
               {order.shippingAddress.postalCode}
             </p>
           </div>

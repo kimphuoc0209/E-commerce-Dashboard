@@ -21,7 +21,7 @@ const Orders = (props) => {
       </thead>
       <tbody>
         {orders.map((order) => (
-          <tr key={order.id}>
+          <tr key={order._id}>
             <td>
               <b>{order.user.name}</b>
             </td>
@@ -40,11 +40,63 @@ const Orders = (props) => {
             </td>
             <td>{moment(order.createdAt).format("MMMM Do YYYY")}</td>
             <td>
-              {order.isDelivered ? (
-                <span className="badge btn-success">Delivered</span>
+              {/* {!order.isVerified ? (
+                <span className="badge btn-danger">Not Confirm</span>
               ) : (
-                <span className="badge btn-dark">Not Delivered</span>
+                <span className="badge btn-dark">Order Confirmed</span>
+              )} */}
+              {!order.isVerified && !order.cancelOrder && (
+                <span className="badge btn-danger">Not Confirm</span>
               )}
+              {!order.isDelivered &&
+                !order.isShipping &&
+                !order.isPicked &&
+                !order.confirmShipping &&
+                order.isVerified &&
+                !order.cancelOrder && (
+                  <span className="badge btn-dark">Order Confirmed</span>
+                )}
+              {!order.isDelivered &&
+                !order.isShipping &&
+                !order.isPicked &&
+                order.confirmShipping &&
+                order.isVerified &&
+                !order.cancelOrder && (
+                  <span className="badge btn-success">Picking Up Order</span>
+                )}
+              {!order.isDelivered &&
+                !order.isShipping &&
+                order.isPicked &&
+                order.confirmShipping &&
+                order.isVerified &&
+                !order.cancelOrder && (
+                  <span className="badge btn-info">Successful Pick Up</span>
+                )}
+              {!order.isDelivered &&
+                order.isShipping &&
+                order.isPicked &&
+                order.confirmShipping &&
+                order.isVerified &&
+                !order.cancelOrder && (
+                  <span className="badge btn-warning">
+                    Delivery In Progress
+                  </span>
+                )}
+              {order.isDelivered &&
+                order.isShipping &&
+                order.isPicked &&
+                order.confirmShipping &&
+                order.isVerified && (
+                  <span className="badge btn-primary">Delivery Successful</span>
+                )}
+              {order.cancelOrder &&
+                !order.isDelivered &&
+                !order.isShipping &&
+                !order.isPicked &&
+                !order.confirmShipping &&
+                !order.isVerified && (
+                  <span className="badge btn-danger">Order Canceled</span>
+                )}
             </td>
             <td className="d-flex justify-content-end align-items-center">
               <Link to={`/order/${order._id}`} className="text-success">
@@ -53,26 +105,6 @@ const Orders = (props) => {
             </td>
           </tr>
         ))}
-
-        {/* <tr>
-          <td>
-            <b>Cá Chuột Pygmy</b>
-          </td>
-          <td>kimphuoc@gmail.com</td>
-          <td>60,000 VND</td>
-          <td>
-            <span className="badge rounded-pill alert-danger">Not paid</span>
-          </td>
-          <td>Oct 10 2022</td>
-          <td>
-            <span className="badge btn-dark">Not Delivered</span>
-          </td>
-          <td className="d-flex justify-content-end align-item-center">
-            <Link to={`/order`} className="text-success">
-              <i className="fas fa-eye"></i>
-            </Link>
-          </td>
-        </tr> */}
       </tbody>
     </table>
   );

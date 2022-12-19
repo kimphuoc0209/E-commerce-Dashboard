@@ -1,8 +1,8 @@
 import {
-  ORDER_DELIVERED_FAIL,
-  ORDER_DELIVERED_REQUEST,
-  ORDER_DELIVERED_RESET,
-  ORDER_DELIVERED_SUCCESS,
+  ORDER_CONFIRMED_FAIL,
+  ORDER_CONFIRMED_REQUEST,
+  ORDER_CONFIRMED_RESET,
+  ORDER_CONFIRMED_SUCCESS,
   ORDER_DETAILS_FAIL,
   ORDER_DETAILS_REQUEST,
   ORDER_DETAILS_SUCCESS,
@@ -43,15 +43,15 @@ export const orderDetailsReducer = (
 };
 
 //  ORDER DELIVERED
-export const orderDeliveredReducer = (state = {}, action) => {
+export const orderConfirmedReducer = (state = {}, action) => {
   switch (action.type) {
-    case ORDER_DELIVERED_REQUEST:
+    case ORDER_CONFIRMED_REQUEST:
       return { loading: true };
-    case ORDER_DELIVERED_SUCCESS:
+    case ORDER_CONFIRMED_SUCCESS:
       return { loading: false, success: true };
-    case ORDER_DELIVERED_FAIL:
+    case ORDER_CONFIRMED_FAIL:
       return { loading: false, error: action.payload };
-    case ORDER_DELIVERED_RESET:
+    case ORDER_CONFIRMED_RESET:
       return {};
     default:
       return state;

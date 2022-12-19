@@ -4,7 +4,7 @@ import OrderDetailInfo from "./OrderDetailInfo";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  deliverOrder,
+  confirmOrder,
   getOrderDetails,
 } from "../../Redux/Actions/OrderActions";
 import Loading from "../LoadingError/Loading";
@@ -19,15 +19,15 @@ const OrderDetailMain = (props) => {
   const orderDetails = useSelector((state) => state.orderDetails);
   const { loading, error, order } = orderDetails;
 
-  const orderDeliver = useSelector((state) => state.orderDeliver);
-  const { loading: loadingDelivered, success: successDelivered } = orderDeliver;
+  const orderConfirm = useSelector((state) => state.orderConfirm);
+  const { loading: loadingConfirmed, success: successConfirmed } = orderConfirm;
 
   useEffect(() => {
     dispatch(getOrderDetails(orderId));
-  }, [dispatch, orderId, successDelivered]);
+  }, [dispatch, orderId, successConfirmed]);
 
-  const deliveredHandler = () => {
-    dispatch(deliverOrder(order));
+  const confirmedHandler = () => {
+    dispatch(confirmOrder(order));
   };
 
   return (
@@ -68,20 +68,25 @@ const OrderDetailMain = (props) => {
               </div>
               <div className="col-lg-3">
                 <div className="box shadow-sm bg-light">
-                  {order.isDelivered ? (
+                  {order.isVerified ? (
                     <button className="btn btn-success col-12">
-                      DELIVERED AT ({" "}
-                      {moment(order.deliveredAt).format("MMMM Do YYYY")})
+                      ORDER CONFIRMED
                     </button>
                   ) : (
                     <>
-                      {loadingDelivered && <Loading />}
-                      <button
-                        className="btn btn-dark col-12"
-                        onClick={deliveredHandler}
-                      >
-                        MARK AS DELIVERED
-                      </button>
+                      {loadingConfirmed && <Loading />}
+                      {order.cancelOrder ? (
+                        <button className="btn btn-danger col-12">
+                          ORDER CANCELED
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btn-dark col-12"
+                          onClick={confirmedHandler}
+                        >
+                          CONFIRM ORDER
+                        </button>
+                      )}
                     </>
                   )}
                 </div>

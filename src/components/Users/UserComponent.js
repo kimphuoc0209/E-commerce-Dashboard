@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { listUser } from "../../Redux/Actions/UserActions";
 import Loading from "../LoadingError/Loading";
@@ -19,14 +18,9 @@ const UserComponent = () => {
     <section className="content-main">
       <div className="content-header">
         <h2 className="content-title">Customers</h2>
-        <div>
-          <Link to="#" className="btn btn-primary">
-            <i className="material-icons md-plus"></i>Create New
-          </Link>
-        </div>
       </div>
       <div className="card mb-4">
-        <header className="card-header">
+        {/* <header className="card-header">
           <div className="row gx-3 py-3">
             <div className="col-lg-4 col-md-6 me-auto">
               <input
@@ -36,7 +30,7 @@ const UserComponent = () => {
               />
             </div>
           </div>
-        </header>
+        </header> */}
 
         <div className="card-body">
           {loading ? (
@@ -64,7 +58,7 @@ const UserComponent = () => {
                             <span>Email</span>
                           </th>
                           <th>
-                            <span>Acion</span>
+                            <span>Role</span>
                           </th>
                         </tr>
                       </thead>
@@ -74,28 +68,32 @@ const UserComponent = () => {
                             <td>
                               <img src="images/logo.png" alt="avt" />
                               <h5 className="user-link">{user.name}</h5>
-                              {user.isAdmin === true ? (
-                                <span className="user-subhead">Admin</span>
-                              ) : (
-                                <span className="user-subhead">Customer</span>
-                              )}
                             </td>
-                            <td >{user._id}</td>
+                            <td>{user._id}</td>
                             <td className="text-center">
                               <span className="label label-default">
-                              {moment(user.createdAt).format("MMMM Do YYYY")}
+                                {moment(user.createdAt).format("MMMM Do YYYY")}
                               </span>
                             </td>
                             <td>
                               <a href={`mailto:${user.email}`}>{user.email}</a>
                             </td>
                             <td style={{ width: "20%" }}>
-                              <Link to="#" className="table-link danger">
-                                <span className="fa-stack">
-                                  <i className="fa fa-square fa-stack-2x"></i>
-                                  <i className="fas fa-trash-alt fa-stack-1x fa-inverse"></i>
-                                </span>
-                              </Link>
+                              {user.isAdmin === true ? (
+                                <span className="user-subhead">Admin</span>
+                              ) : (
+                                <>
+                                  {user.isShipper === true ? (
+                                    <span className="user-subhead">
+                                      Shipper
+                                    </span>
+                                  ) : (
+                                    <span className="user-subhead">
+                                      Customer
+                                    </span>
+                                  )}
+                                </>
+                              )}
                             </td>
                           </tr>
                         ))}
@@ -108,7 +106,7 @@ const UserComponent = () => {
           )}
 
           {/* nav */}
-          <nav className="float-end mt-4" aria-label="Page navigation">
+          {/* <nav className="float-end mt-4" aria-label="Page navigation">
             <ul className="pagination">
               <li className="page-item disabled">
                 <Link className="page-link" to="#">
@@ -126,7 +124,7 @@ const UserComponent = () => {
                 </Link>
               </li>
             </ul>
-          </nav>
+          </nav> */}
         </div>
       </div>
     </section>
